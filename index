@@ -1,0 +1,674 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Comprehensive Project Loan Application</title>
+<style>
+body{font-family:Attractive;background:#f4f6f8;padding:20px}
+.container{max-width:1000px;margin:auto;background:white;padding:30px;border-radius:10px;box-shadow:0 0 10px #ccc}
+h2{color:#1e3a8a;border-bottom:2px solid #eee;padding-bottom:5px;margin-top:30px}
+input,select,textarea{width:100%;padding:10px;margin:6px 0;border-radius:5px;border:1px solid #ccc}
+button{background:#1e3a8a;color:white;padding:14px;border:none;width:100%;border-radius:6px;font-size:16px;margin-top:20px}
+.section{margin-bottom:20px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+@media(max-width:768px){.grid{grid-template-columns:1fr}}
+</style>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+
+</head>
+<body>
+<div class="container">
+<h1>Project Loan Application Form</h1>
+<form id="loanForm">
+
+
+<div style="text-align:center; margin-top:30px;">
+  <a href="https://script.google.com/macros/s/AKfycbwlSDtihKIx-LZa64Yzk0f_e06YNHde3vYjqxo0ibPzThdPWpdT00a2DafHPgurJaPLfQ/exec" target="_blank"
+     style="
+       font-size:20px; 
+       font-weight:bold; 
+       color:white;
+       background:#1e3a8a;
+       padding:12px 25px;
+       border-radius:8px;
+       text-decoration:none;">
+     Admin Login
+  </a>
+</div>
+
+
+
+
+
+<h2>1. Applicant Details</h2>
+<div class="grid">
+<input name="ID_Number" placeholder="ID Number">
+<select name="Project_Type" required>
+  <option value="">Select Project Type</option>
+  <option>Agricultural Comodity Trading</option>
+  <option>Agro Service Center ( Krishi Seva Kendra)</option>
+<option>Agro Tourism</option>
+  <option>Agro Tourism ( Krishi Seva Kendra)</option>
+  <option>Briquettes Manufacturing</option>
+  <option>Cashew Processing</option>
+  <option>Dairy Farming</option>
+  <option>Dal Mill</option>
+  <option>Dehydration of Vegetales & Fruits</option>
+  <option>Exotic Nursery</option>
+  <option>Farm Equipment or Agriculture implements</option>
+<option>Fish Farming</option>
+<option>Food & Fruit Processing</option>
+<option>Goat Farming</option>
+<option>HoneyBee Keeping</option>
+<option>Mushroom Cultivation</option>
+<option>Nursery</option>
+<option>Organic Fertilizer or PGR Unit</option>
+<option>Ornamental Nursery</option>
+<option>Papad Making Unit</option>
+<option>Pearl Farming</option>
+<option>Pig Farming</option>
+<option>Poultry Farming</option>
+<option>Rabbit Farming</option>
+<option>Rice Mill</option>
+<option>Sericulture</option>
+<option>Sheep Farming</option>
+<option>Soil & Water Testing Laboratory</option>
+<option>Spices Processing</option>
+<option>Spirulina unit</option>
+<option>Vermiculture</option>
+<option>Sugarcane Nursery</option>
+<option>Wooden Oil Extraction Unit</option>
+
+
+</select>
+
+
+
+
+
+
+
+<input name="Name_As_Per_ADHAR" placeholder="Name of Candidate (As Per ADHAR)">
+<input name="PAN_Number" placeholder="PAN Number">
+<input name="ADHAR_Number" placeholder="ADHAR Number">
+<input name="Udyog_ADHAR_Number" placeholder="Udyog ADHAR Number">
+<input name="Mobile_Number" placeholder="Mobile Number">
+<input name="Email_ID" placeholder="E-mail ID">
+<select name="Gender"><option value="">Gender</option><option>Male</option><option>Female</option></select>
+<select name="Cast">
+    <option value="">You Belong To</option>
+    <option>OPEN</option>
+    <option>OBC</option>
+    <option>SC</option>
+    <option>ST</option>
+    <option>VJNT</option>
+  </select>
+<select name="Education">
+<option value="">Educational Qualification</option>
+    <option>Diploma in Agriculture</option>
+    <option>B.Sc Agriculture</option>
+    <option>M.Sc Agriculture</option>
+   <option>B.Tech. Agriculture</option>
+   <option>B.Sc./ M.Sc Chemistry </option>
+   <option>B.Sc. Horticulture</option>
+   <option>Veterenary </option>
+   <option>Agri Business Management</option>
+    <option>Other</option>
+  </select>
+
+<select name="Experience">
+    <option value="">Experience in this Business</option>
+    <option>0 to 1 Year</option>
+    <option>2 to 3 Years</option>
+    <option>4 to 5 Years</option>
+    <option>more than 5 Years</option>
+  </select></div>
+
+<h2>2. Project Location Address Details</h2>
+<textarea name="Project_Address" placeholder="First line of Address of Proposed Project site"></textarea>
+<div class="grid">
+<input name="Village_City" placeholder="Village or City">
+ 
+<select id="taluka" name="Taluka" required>
+    <option value="">Select Taluka</option>
+  </select>
+
+
+  <label>District</label><br>
+<select id="district"name="District" required>>
+  <option value="">Select District</option>
+  
+<option value="Ahmednagar">Ahmednagar</option>
+<option value="Akola">Akola</option>
+<option value="Beed">Beed</option>
+<option value="Buldhana">Buldhana</option> 
+<option value="Pune">Pune</option> 
+<option value="Sangli">Sangli</option> 
+<option value="Solapur">Solapur</option> 
+<option value="Kolhapur">Kolhapur</option> 
+<option value="Chandrapur">Chandrapur</option> 
+<option value="Dhule">Dhule</option> 
+<option value="Gadchiroli">Gadchiroli</option> 
+<option value="Gondia">Gondia</option> 
+<option value="Hingoli">Hingoli</option> 
+<option value="Jalgaon">Jalgaon</option> 
+<option value="Jalana">Jalana</option> 
+<option value="Latur">Latur</option> 
+<option value="MumbaiCity">MumbaiCity</option> 
+<option value="MumbaiUrban">MumbaiUrban</option> 
+<option value="Nagpur">Nagpur</option> 
+<option value="Nanded">Nanded</option> 
+<option value="Nandurbar">Nandurbar</option> 
+<option value="Nashik">Nashik</option> 
+<option value="Osmanabad">osmanabad</option> 
+<option value="Palghar">Palghar</option> 
+<option value="Parbhani">Parbhani</option> 
+<option value="Raigad">Raigad</option> 
+<option value="Ratnagiri">Ratnagiri</option> 
+<option value="Satara">Satara</option> 
+<option value="Sindhudurg">Sindhudurg</option> 
+<option value="Thane">Thane</option> 
+<option value="Wardha">Wardha</option> 
+<option value="Washim">Washim</option> 
+<option value="Yavatmal">Yavatmal</option> 
+</select>
+<br><br>
+
+
+<script>
+const talukaData = {
+  	Pune: ["Ambegaon","Baramati","Bhor","Daund"],
+ 	Sangli: ["Miraj","Jat","Walwa"],
+ 	Ahmednagar: ["Akole","Jamkhed","Karjat","Kopargaon","Nagar","Nevasa","Parner","Pathardi","Rahata","Rahuri","Sangamner","Shevgaon","Shrigonda","Shrirampur"],
+ 	Akola: ["Akola","Akot","Balapur","Barshitakli","Murtijapur","Patur","Telhara"],
+ 	Amravati: ["Amravati","Anjangaon","Bhatkuli","Chandur Railway","Chandurbazar","Daryapur","Dhamangaon","Morshi","Nandgaon-Khandeshwar","Teosa","Warud" ],
+  	Aurangabad: ["Aurangabad","Gangapur","Kannad","Khuldabad", "Paithan","Phulambri","Sillod","Soygaon","Vaijapur"],
+	Beed: ["Ambajogai","Ashti","Beed","Dharur","Georai","Kaij","Majalgaon","Parli","Patoda","Shirur-Kasar","Wadwani"],
+	Buldhana: ["Buldhana","Chikhli","Deulgaon Raja","Jalgaon Jamod","Khamgaon","Lonar","Malkapur","Mehkar","Motala","Nandura","Sangrampur","Shegaon"],
+	Pune: ["Ambegaon","Baramati","Bhor","Daund","Haveli","Indapur","Junnar","Khed","Maval","Mulshi","Pune City","Purandar","Shirur","Velhe"],
+        Sangli: ["Miraj","Tasgaon","Jat","Walwa","Shirala","Atpadi","Palus","Khanapur","Kavathe Mahankal"],
+  Kolhapur: ["Karvir","Panhala","Hatkanangle","Shirol","Radhanagari","Bhudargad","Gaganbawada","Ajara","Chandgad","Kagal","Shahuwadi"],
+  Solapur: ["Akkalkot","Barshi","Karmala","Madha","Malshiras","Mangalvedhe","Mohol","Pandharpur","Sangole","Solapur North","Solapur South"],
+  Chandrapur: ["Ballarpur","Bhadravati","Brahmapuri","Chandrapur","Chimur","Gondpipri","Jiwati","Korpana","Mul","Nagbhid","Pombhurna","Rajura","Sawali","Sindewahi","Warora"],
+  Dhule: ["Dhule","Sakri","Shirpur","Sindkheda"],
+  Gadchiroli: ["Aheri","Armori","Bhamragad","Chamorshi","Dhanora","Etapalli","Gadchiroli","Kurkheda","Mulchera","Sironcha"],
+  Gondia: ["Amgaon","Arjuni Morgaon","Deori","Gondia","Goregaon","Sadak Arjuni","Salekasa","Tirora"],
+  Hingoli: ["Aundha Nagnath","Basmat","Hingoli","Kalamnuri","Sengaon"],
+  Jalgaon: ["Amalner","Bhadgaon","Bhusawal","Bodwad","Chalisgaon","Chopda","Dharangaon","Erandol","Jalgaon","Jamner","Muktainagar","Pachora","Parola","Raver","Yawal"],
+  Jalna: ["Ambad","Badnapur","Bhokardan","Ghansawangi","Jafrabad","Jalna","Mantha","Partur"],
+  Latur: ["Ahmadpur","Ausa","Chakur","Deoni","Jalkot","Latur","Nilanga","Renapur","Shirur Anantpal","Udgir"],
+  MumbaiCity: ["Mumbai City"],
+  MumbaiSuburban: ["Andheri","Borivali","Kurla"],
+  Nagpur: ["Bhiwapur","Hingna","Kalameshwar","Kamptee","Katol","Kuhi","Mauda","Nagpur Rural","Nagpur Urban","Narkhed","Parseoni","Ramtek","Savner","Umred"],
+  Nanded: ["Ardhapur","Biloli","Bhokar","Deglur","Dharmabad","Hadgaon","Himayatnagar","Kandhar","Kinwat","Loha","Mahur","Mudkhed","Mukhed","Naigaon","Nanded","Umri"],
+  Nandurbar: ["Akkalkuwa","Akrani","Nandurbar","Nawapur","Shahada","Taloda"],
+  Nashik: ["Baglan","Chandwad","Deola","Dindori","Igatpuri","Kalwan","Malegaon","Nandgaon","Nashik","Niphad","Peint","Sinnar","Surgana","Trimbakeshwar","Yeola"],
+  Osmanabad: ["Bhum","Kalamb","Lohara","Osmanabad","Paranda","Tuljapur","Umarga","Washi"],
+	 Palghar: ["Dahanu","Jawhar","Mokhada","Palghar","Talasari","Vasai","Vikramgad","Wada"],
+ Parbhani: ["Gangakhed","Jintur","Manwath","Palam","Parbhani","Pathri","Purna","Sailu","Sonpeth"],
+  Raigad: ["Alibag","Karjat","Khalapur","Mahad","Mangaon","Mhasla","Murud","Panvel","Pen","Poladpur","Roha","Shrivardhan","Sudhagad","Tala","Uran"],
+
+  Ratnagiri: [
+    "Chiplun","Dapoli","Guhagar","Khed",
+    "Lanja","Mandangad","Rajapur","Ratnagiri","Sangameshwar"
+  ],
+
+  Satara: [
+    "Jaoli","Karad","Khandala","Khatav",
+    "Mahabaleshwar","Man","Patan",
+    "Phaltan","Satara","Wai"
+  ],
+  Sindhudurg: [
+    "Devgad","Dodamarg","Kankavli",
+    "Kudal","Malvan","Sawantwadi","Vaibhavwadi","Vengurla"
+  ],
+
+  Thane: [
+    "Ambarnath","Bhiwandi","Dahanu",
+    "Jawhar","Kalyan","Mokhada",
+    "Murbad","Palghar","Shahapur",
+    "Talasari","Thane","Ulhasnagar",
+    "Vada","Vasai","Vikramgad"
+  ],
+
+  Wardha: [
+    "Arvi","Ashti","Deoli",
+    "Hinganghat","Karanja","Samudrapur","Seloo","Wardha"
+  ],
+
+  Washim: [
+    "Karanja","Malegaon","Mangrulpir","Manora","Risod","Washim"
+  ],
+
+  Yavatmal: [
+    "Arni","Babulgaon","Darwha","Digras",
+    "Ghatanji","Kalamb","Kelapur",
+    "Mahagaon","Maregaon","Ner",
+    "Pandharkawada","Pusad",
+    "Ralegaon","Umarkhed","Wani","Yavatmal"
+  ]
+ 
+
+};
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("district").addEventListener("change", loadTaluka);
+});
+
+function loadTaluka() {
+  const district = document.getElementById("district").value;
+  const taluka = document.getElementById("taluka");
+
+  taluka.innerHTML = '<option value="">Select Taluka</option>';
+
+  if (!district) return;
+
+  talukaData[district].forEach(function (t) {
+    const opt = document.createElement("option");
+    opt.value = t;
+    opt.text = t;
+    taluka.appendChild(opt);
+  });
+}
+</script>
+
+
+
+
+<select name="State">
+  <option value="">Select State</option>
+<option>Maharashtra</option>
+  <option>Karnataka</option>
+<option>Gujrat</option>
+<option>Madhya Pradesh</option>
+
+<input name="Pin_Code" placeholder="Pin Code">
+<textarea name="Residential_Address" placeholder="Residential Address"></textarea>
+</div>
+
+<h2>3. Business & Land Details</h2>
+<div class="grid">
+<select name="Running_Business">
+    <option value="">Are You Running Your Business?</option><option>Yes</option><option>No</option></select>
+<select name="Credit_Score">
+  <option value="">Select Credit Score Range</option>
+<option>NA</option>
+  <option>Below 600</option>
+  <option>600 to 650</option>
+  <option>651 to 700</option>
+  <option>701 to 750</option>
+  <option>Above 750</option>
+</select>
+<input name="GST_Number" placeholder="GST Number (If Any)">
+<input name="Land_Required" placeholder="Land Required (Sq Ft)">
+<select name="Land_Status" required>
+  <option value="">Select Land Status</option>
+  <option>Owned</option>
+  <option>Leased</option>
+  </select>
+<input name="Lease_Period" placeholder="Lease Period (If Leased)">
+</div>
+
+<h2>4. Location & Connectivity</h2>
+<div id="map" style="height:400px; margin:10px 0; border-radius:10px;"></div>
+<p id="highwayResult">Click on map to fetch location & nearest highway</p>
+
+
+
+<div class="grid">
+<input name="Google_Map_Coordinates" placeholder="Coordinates from Google Map">
+<input name="Highway_Distance" placeholder="Distance to National/State Highway (km)">
+<input name="APMC" placeholder="Nearest APMC">
+<input name="Labors_Required" placeholder="Labors Required">
+
+<select name="ACABC_Center" required>
+  <option value="">Select ACABC Center</option>
+  <option>KVAAF Sangli</option>
+  <option>KVAAF Uttur</option>
+<option>KVAAF Pune</option>
+<option>KVAAF Oros</option>
+<option>KVAAF Buldhana</option>
+<option>KVAAF Nagpur</option>
+</select>
+</div>
+
+<h2>5. Project Timeline</h2>
+<div class="grid">
+
+<select name="Project_Year" required>
+  <option value="">Year of Project</option>
+  <option>2026</option>
+  <option>2027</option>
+<option>2028</option>
+<option>2029</option>
+</select>
+
+<select name="Loan_Repayment_Years" required>
+  <option value="">Loan Repayment Years</option>
+  <option>3</option>
+  <option>4</option>
+<option>5</option>
+<option>6</option>
+<option>7</option>
+  <option>8</option>
+<option>9</option>
+<option>10</option>
+</select>
+</div>
+
+<h2>6. Existing Loan  Cash Credit</h2>
+<div class="grid">
+<input name="Bank1_Name" placeholder="Bank Name & Branch">
+<input name="Bank1_Loan_Amount" placeholder="Loan Amount">
+<input name="Bank1_Outstanding" placeholder="Outstanding Amount">
+<input name="Bank1_Security" placeholder="Security Given">
+<input name="Bank1_Interest" placeholder="Rate of Interest">
+<input name="Bank1_Repayment" placeholder="Repayment Terms (Years)">
+<input name="Bank1_Purpose" placeholder="Purpose of Loan">
+</div>
+
+<h2>7. Existing Loan TermLoan</h2>
+<div class="grid">
+<input name="Bank2_Name" placeholder="Bank Name & Branch">
+<input name="Bank2_Loan_Amount" placeholder="Loan Amount">
+<input name="Bank2_Outstanding" placeholder="Outstanding Amount">
+<input name="Bank2_Security" placeholder="Security Given">
+<input name="Bank2_Interest" placeholder="Rate of Interest">
+<input name="Bank2_Repayment" placeholder="Repayment Terms (Years)">
+<input name="Bank2_Purpose" placeholder="Purpose of Loan">
+</div>
+
+<h2>8. Existing Loan OtherLoan</h2>
+<div class="grid">
+<input name="Bank3_Name" placeholder="Bank Name & Branch">
+<input name="Bank3_Loan_Amount" placeholder="Loan Amount">
+<input name="Bank3_Outstanding" placeholder="Outstanding Amount">
+<input name="Bank3_Security" placeholder="Security Given">
+<input name="Bank3_Interest" placeholder="Rate of Interest">
+<input name="Bank3_Repayment" placeholder="Repayment Terms (Years)">
+<input name="Bank3_Purpose" placeholder="Purpose of Loan">
+</div>
+
+<h2>9. Project Cost & Funding</h2>
+<div class="grid">
+<input name="Total_Project_Cost" placeholder="Total Project Cost">
+<input name="Loan_Required" placeholder="Loan Required">
+<input name="Self_Investment" placeholder="Self Investment">
+</div>
+
+
+
+
+
+
+
+
+
+
+<button type="submit">Submit Application</button>
+</form>
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+document.getElementById("loanForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const form = this;
+  const data = Object.fromEntries(new FormData(form));
+
+  fetch("https://script.google.com/macros/s/AKfycbwlSDtihKIx-LZa64Yzk0f_e06YNHde3vYjqxo0ibPzThdPWpdT00a2DafHPgurJaPLfQ/exec", {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(result => {
+    if (result.status === "success") {
+
+      // 1️⃣ Confirmation message
+      alert("✅ Your application has been submitted successfully.\nThank you!");
+
+      // 2️⃣ Clear all fields
+      form.reset();
+
+      // 3️⃣ Close the page (works if opened via link/button)
+      //setTimeout(() => {
+        //window.close();
+     // }, 500);
+
+    } else {
+      alert("❌ Submission failed. Please try again.");
+    }
+  })
+  .catch(() => {
+    alert("❌ Network error. Please check internet connection.");
+  });
+
+<!-- Google Form Link Display -->
+<div id="googleFormBox" 
+     style="display:none; 
+            margin-top:20px; 
+            text-align:center; 
+            padding:15px; 
+            border:2px dashed #1e3a8a; 
+            border-radius:10px; 
+            background:#f0f7ff;">
+  
+  <p style="font-size:18px; font-weight:600; color:#1e3a8a; margin-bottom:10px;">
+    Please fill the detailed project Cost.
+  </p>
+
+  <a id="googleFormLink"
+     href="#"
+     target="_blank"
+     style="
+       display:inline-block;
+       font-size:22px;
+       font-weight:800;
+       color:#ffffff;
+       background:#1e3a8a;
+       padding:14px 26px;
+       border-radius:8px;
+       text-decoration:none;
+     ">
+     👉 Fill Project Costing 
+  </a>
+</div>
+
+<div id="googleFormBox" style="display:none; margin-top:10px;">
+  <p style="font-weight:bold;color:#1e3a8a;">
+    Please fill the detailed Costing of  project:
+  </p>
+  <a id="googleFormLink" href="#" target="_blank" 
+     style="color:#2563eb;font-size:16px;">
+     Open Google Form
+  </a>
+</div>
+});
+
+</script>
+
+
+<script>
+
+document.getElementById("district").addEventListener("change", loadTaluka);
+
+function loadTaluka() {
+
+
+
+document.getElementById("district").addEventListener("change", loadTaluka);
+
+  const district = document.getElementById("district").value;
+  const taluka = document.getElementById("taluka");
+
+  taluka.innerHTML = '<option value="">Select Taluka</option>';
+
+  if (talukaData[district]) {
+    talukaData[district].forEach(t => {
+      let opt = document.createElement("option");
+      opt.value = t;
+      opt.text = t;
+      taluka.appendChild(opt);
+    });
+  }
+}
+</script>
+
+
+<script>
+const projectFormMap = {
+   "Dairy Farming":  "https://forms.gle/sZUWv3AX2oBXNWoeA",
+  "Agricultural Comodity Trading":  "https://forms.gle/Co37zbVLJFaEsPy3A",
+  "Agro Service Center ( Krishi Seva Kendra)": "https://forms.gle/dzKS4uNLqpfv79si7",
+  "Briquettes Manufacturing": "https://forms.gle/17VYYLfMcLWB9j8q6",
+  "Cashew Processing": "https://forms.gle/WjSUWNZDQyQRNLjS9",
+  "Combined Harvester": "https://forms.gle/WWUSL6MnPvQQwsHX8",
+  "Dal Mill": "https://forms.gle/52VakRYmkygvaaFKA",
+  "Dehydration of Vegetales & Fruits": "https://forms.gle/JUQJwdZrAZMFGLdy7",
+  "Earth Moving  Equipments": "https://forms.gle/fjWWVufW6CobYmY4A",
+  "Exotic Nursery": "https://forms.gle/HPu9aeUWbZ67JTaYA",
+  "Farm Equipment or Agriculture implements": "https://forms.gle/v6XgDkjpUChX7FRX8",
+  "Fish Farming": "https://forms.gle/qMXpct6S7e6jcvVb7",
+  "Food & Fruit Processing": "https://forms.gle/GjLTHhY7f5fcaL2e6",
+  "Goat Farming": "https://forms.gle/15iSUQfK5RNKMtux7",
+  "HoneyBee Keeping": "https://forms.gle/6cDx28DkuXoFhE7J6",
+  "Mushroom Cultivation": "https://forms.gle/im2BjTZ6ARVxz4Nq6",
+  "Nursery": "https://forms.gle/HPu9aeUWbZ67JTaYA",
+  "Organic Fertilizer or PGR Unit": "https://forms.gle/8ATRbzbnU4MbiaNm9",
+  "Ornamental Nursery": "https://forms.gle/HPu9aeUWbZ67JTaYA",
+  "Papad Making Unit": "https://forms.gle/cixLJLXm1aQkZcsY9",
+  "Pearl Farming": "https://forms.gle/e1xdgtNP6EX3Shw9A",
+  "Pig Farming": "https://forms.gle/XbxLVTp3wEtZru9T9",
+  "Poultry Farming": "https://forms.gle/eedhRYDZcx2GYLXDA", 
+ "Rabbit Farming": "https://forms.gle/5TnSqQ8nYqZBriaVA",
+  "Rice Mill": "https://forms.gle/hT3DELTHxrwG9HNB7",
+  "Sericulture": "https://forms.gle/dahTztTt1QPBiTsHA",
+  "Sheep Farming": "https://forms.gle/Esjacgx9oAmRDv8Z9",
+  "Soil & Water Testing Laboratory": "https://forms.gle/qnP1PtKwXDTrD55d7",
+  "Spices Processing": "https://forms.gle/pD65zU4tHDKgoXks8",
+  "Spirulina unit": "https://forms.gle/A1h7vuTLL6QKo6eY7",
+  "Sugarcane Nursery": "https://forms.gle/HPu9aeUWbZ67JTaYA",
+  "Vermiculture": "https://forms.gle/6T3z4uhnKdf3KyAj7",
+  "Wooden Oil Extraction Unit": "https://forms.gle/fYT3ZC37F8TctCiD7"
+};
+
+document.querySelector('[name="Project_Type"]').addEventListener("change", function () {
+  const selectedProject = this.value;
+  const box = document.getElementById("googleFormBox");
+  const link = document.getElementById("googleFormLink");
+
+  if (projectFormMap[selectedProject]) {
+    link.href = projectFormMap[selectedProject];
+    box.style.display = "block";
+  } else {
+    box.style.display = "none";
+  }
+});
+
+
+</script>
+
+<script>
+const projectFormMap = {
+  "Dairy Farming":  "https://forms.gle/sZUWv3AX2oBXNWoeA",
+  "Agricultural Comodity Trading":  "https://forms.gle/Co37zbVLJFaEsPy3A",
+  "Agro Service Center ( Krishi Seva Kendra)": "https://forms.gle/dzKS4uNLqpfv79si7",
+  "Briquettes Manufacturing": "https://forms.gle/17VYYLfMcLWB9j8q6",
+  "Cashew Processing": "https://forms.gle/WjSUWNZDQyQRNLjS9",
+  "Combined Harvester": "https://forms.gle/WWUSL6MnPvQQwsHX8",
+  "Dal Mill": "https://forms.gle/52VakRYmkygvaaFKA",
+  "Dehydration of Vegetales & Fruits": "https://forms.gle/JUQJwdZrAZMFGLdy7",
+  "Earth Moving  Equipments": "https://forms.gle/fjWWVufW6CobYmY4A",
+  "Exotic Nursery": "https://forms.gle/HPu9aeUWbZ67JTaYA",
+  "Farm Equipment or Agriculture implements": "https://forms.gle/v6XgDkjpUChX7FRX8",
+  "Fish Farming": "https://forms.gle/qMXpct6S7e6jcvVb7",
+  "Food & Fruit Processing": "https://forms.gle/GjLTHhY7f5fcaL2e6",
+  "Goat Farming": "https://forms.gle/15iSUQfK5RNKMtux7",
+  "HoneyBee Keeping": "https://forms.gle/6cDx28DkuXoFhE7J6",
+  "Mushroom Cultivation": "https://forms.gle/im2BjTZ6ARVxz4Nq6",
+  "Nursery": "https://forms.gle/HPu9aeUWbZ67JTaYA",
+  "Organic Fertilizer or PGR Unit": "https://forms.gle/8ATRbzbnU4MbiaNm9",
+  "Ornamental Nursery": "https://forms.gle/HPu9aeUWbZ67JTaYA",
+  "Papad Making Unit": "https://forms.gle/cixLJLXm1aQkZcsY9",
+  "Pearl Farming": "https://forms.gle/e1xdgtNP6EX3Shw9A",
+  "Pig Farming": "https://forms.gle/XbxLVTp3wEtZru9T9",
+  "Poultry Farming": "https://forms.gle/eedhRYDZcx2GYLXDA", 
+ "Rabbit Farming": "https://forms.gle/5TnSqQ8nYqZBriaVA",
+  "Rice Mill": "https://forms.gle/hT3DELTHxrwG9HNB7",
+  "Sericulture": "https://forms.gle/dahTztTt1QPBiTsHA",
+  "Sheep Farming": "https://forms.gle/Esjacgx9oAmRDv8Z9",
+  "Soil & Water Testing Laboratory": "https://forms.gle/qnP1PtKwXDTrD55d7",
+  "Spices Processing": "https://forms.gle/pD65zU4tHDKgoXks8",
+  "Spirulina unit": "https://forms.gle/A1h7vuTLL6QKo6eY7",
+  "Sugarcane Nursery": "https://forms.gle/HPu9aeUWbZ67JTaYA",
+  "Vermiculture": "https://forms.gle/6T3z4uhnKdf3KyAj7",
+  "Wooden Oil Extraction Unit": "https://forms.gle/fYT3ZC37F8TctCiD7",
+
+};
+
+document.querySelector('[name="Project_Type"]').addEventListener("change", function () {
+  const box = document.getElementById("googleFormBox");
+  const link = document.getElementById("googleFormLink");
+
+  if (projectFormMap[this.value]) {
+    link.href = projectFormMap[this.value];
+    box.style.display = "block";
+  } else {
+    box.style.display = "none";
+  }
+});
+</script>
+
+
+    // ✅ FILL EXISTING FIELD
+   // document.querySelector('[name="Highway_Distance"]').value =distance;
+
+    const name = h.tags.name || h.tags.ref || "Unnamed Highway";
+
+  /*  document.getElementById("highwayResult").innerHTML =
+      `<b>Nearest Highway:</b> ${name}<br>
+       <b>Distance:</b> ${distance} km`; 	*/
+ document.querySelector('[name="Highway_Distance"]').value =name+"-"+distance+"km";
+  })
+  .catch(() => {
+    document.getElementById("highwayResult").innerText =
+      "Error fetching highway data";
+  });
+}
+
+function calculateDistance(lat1, lon1, lat2, lon2) {
+  const R = 6371;
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLon = (lon2 - lon1) * Math.PI / 180;
+
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(lat1 * Math.PI / 180) *
+    Math.cos(lat2 * Math.PI / 180) *
+    Math.sin(dLon / 2) ** 2;
+
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
