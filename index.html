@@ -468,27 +468,19 @@ document.getElementById("loanForm").addEventListener("submit", function (e) {
       // 1️⃣ Confirmation message
       alert("✅ Your application has been submitted successfully.\nThank you!");
 
-  if (projectFormMap[selectedProject]) {
-        window.open(projectFormMap[selectedProject], "_blank");
 
-
-document.querySelector('[name="Project_Type"]').addEventListener("change", function () {
-  const selectedProject = this.value;
-  const box = document.getElementById("googleFormBox");
-  const link = document.getElementById("googleFormLink");
-
-  if (projectFormMap[selectedProject]) {
-    link.href = projectFormMap[selectedProject];
-    box.style.display = "block";
-  } else {
-    box.style.display = "none";
-  }
 
 
 	  
       // 2️⃣ Clear all fields
       form.reset();
 
+
+ const projectType = data.Project_Type;
+      const googleFormLink = projectFormMap[projectType];
+      if (googleFormLink) {
+        window.open(googleFormLink, "_blank");
+		
 		
       // 3️⃣ Close the page (works if opened via link/button)
       //setTimeout(() => {
