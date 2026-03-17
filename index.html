@@ -470,7 +470,22 @@ document.getElementById("loanForm").addEventListener("submit", function (e) {
 
   if (projectFormMap[selectedProject]) {
         window.open(projectFormMap[selectedProject], "_blank");
-		
+
+
+document.querySelector('[name="Project_Type"]').addEventListener("change", function () {
+  const selectedProject = this.value;
+  const box = document.getElementById("googleFormBox");
+  const link = document.getElementById("googleFormLink");
+
+  if (projectFormMap[selectedProject]) {
+    link.href = projectFormMap[selectedProject];
+    box.style.display = "block";
+  } else {
+    box.style.display = "none";
+  }
+
+
+	  
       // 2️⃣ Clear all fields
       form.reset();
 
