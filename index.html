@@ -454,6 +454,45 @@ function loadTaluka() {
 document.getElementById("loanForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
+ <script>
+const projectFormMap = {
+   "Dairy Farming":  "https://forms.gle/sZUWv3AX2oBXNWoeA",
+  "Agricultural Comodity Trading":  "https://forms.gle/Co37zbVLJFaEsPy3A",
+  "Agro Service Center ( Krishi Seva Kendra)": "https://forms.gle/dzKS4uNLqpfv79si7",
+  "Briquettes Manufacturing": "https://forms.gle/17VYYLfMcLWB9j8",
+  "Cashew Processing": "https://forms.gle/WjSUWNZDQyQRNLjS9",
+  "Combined Harvester": "https://forms.gle/WWUSL6MnPvQQwsHX8",
+  "Dal Mill": "https://forms.gle/52VakRYmkygvaaFKA",
+  "Dehydration of Vegetales & Fruits": "https://forms.gle/JUQJwdZrAZMFGLdy7",
+  "Earth Moving  Equipments": "https://forms.gle/fjWWVufW6CobYmY4A",
+  "Exotic Nursery": "https://forms.gle/HPu9aeUWbZ67JTaYA",
+  "Farm Equipment or Agriculture implements": "https://forms.gle/v6XgDkjpUChX7FRX8",
+  "Fish Farming": "https://forms.gle/qMXpct6S7e6jcvVb7",
+  "Food & Fruit Processing": "https://forms.gle/GjLTHhY7f5fcaL2e6",
+  "Goat Farming": "https://forms.gle/15iSUQfK5RNKMtux7",
+  "HoneyBee Keeping": "https://forms.gle/6cDx28DkuXoFhE7J6",
+  "Mushroom Cultivation": "https://forms.gle/im2BjTZ6ARVxz4Nq6",
+  "Nursery": "https://forms.gle/HPu9aeUWbZ67JTaYA",
+  "Organic Fertilizer or PGR Unit": "https://forms.gle/8ATRbzbnU4MbiaNm9",
+  "Ornamental Nursery": "https://forms.gle/HPu9aeUWbZ67JTaYA",
+  "Papad Making Unit": "https://forms.gle/cixLJLXm1aQkZcsY9",
+  "Pearl Farming": "https://forms.gle/e1xdgtNP6EX3Shw9A",
+  "Pig Farming": "https://forms.gle/XbxLVTp3wEtZru9T9",
+  "Poultry Farming": "https://forms.gle/eedhRYDZcx2GYLXDA", 
+ "Rabbit Farming": "https://forms.gle/5TnSqQ8nYqZBriaVA",
+  "Rice Mill": "https://forms.gle/hT3DELTHxrwG9HNB7",
+  "Sericulture": "https://forms.gle/dahTztTt1QPBiTsHA",
+  "Sheep Farming": "https://forms.gle/Esjacgx9oAmRDv8Z9",
+  "Soil & Water Testing Laboratory": "https://forms.gle/qnP1PtKwXDTrD55d7",
+  "Spices Processing": "https://forms.gle/pD65zU4tHDKgoXks8",
+  "Spirulina unit": "https://forms.gle/A1h7vuTLL6QKo6eY7",
+  "Sugarcane Nursery": "https://forms.gle/HPu9aeUWbZ67JTaYA",
+  "Vermiculture": "https://forms.gle/6T3z4uhnKdf3KyAj7",
+  "Wooden Oil Extraction Unit": "https://forms.gle/fYT3ZC37F8TctCiD7"
+};
+
+document.getElementById("loanForm").addEventListener("submit", function (e) {
+  e.preventDefault();
   const form = this;
   const data = Object.fromEntries(new FormData(form));
 
@@ -464,28 +503,15 @@ document.getElementById("loanForm").addEventListener("submit", function (e) {
   .then(response => response.json())
   .then(result => {
     if (result.status === "success") {
-
-      // 1️⃣ Confirmation message
       alert("✅ Your application has been submitted successfully.\nThank you!");
-
-
-
-
-	  
-      // 2️⃣ Clear all fields
       form.reset();
 
-
- const projectType = data.Project_Type;
+      // ✅ Open Google Form in new tab
+      const projectType = data.Project_Type;
       const googleFormLink = projectFormMap[projectType];
       if (googleFormLink) {
         window.open(googleFormLink, "_blank");
-		
-		
-      // 3️⃣ Close the page (works if opened via link/button)
-      //setTimeout(() => {
-        //window.close();
-     // }, 500);
+      }
 
     } else {
       alert("❌ Submission failed. Please try again.");
@@ -494,8 +520,8 @@ document.getElementById("loanForm").addEventListener("submit", function (e) {
   .catch(() => {
     alert("❌ Network error. Please check internet connection.");
   });
-
-
+});
+</script>
 </script>
 
 
