@@ -468,9 +468,13 @@ document.getElementById("loanForm").addEventListener("submit", function (e) {
       // 1️⃣ Confirmation message
       alert("✅ Your application has been submitted successfully.\nThank you!");
 
+  if (projectFormMap[selectedProject]) {
+        window.open(projectFormMap[selectedProject], "_blank");
+		
       // 2️⃣ Clear all fields
       form.reset();
 
+		
       // 3️⃣ Close the page (works if opened via link/button)
       //setTimeout(() => {
         //window.close();
